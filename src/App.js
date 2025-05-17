@@ -3,11 +3,11 @@ import words from './resources/all_words.json';
 
 function App() {
 	const [numWords, setNumWords] = useState(500);
-	const loadMoreWords = () => setNumWords(numWords + 500);
+	const loadMoreWords = () => setNumWords(numWords + 1500);
 
 	useEffect(() => {
 		window.onscroll = (e) => {
-			if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+			if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight * 0.75) {
 				loadMoreWords();
 			}
 		};
